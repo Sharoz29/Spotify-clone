@@ -4,4 +4,4 @@ const userInfoState = (state) => state.userInfoReducer;
 
 const userInfo = (userInfoReducer) => userInfoReducer.userInfo;
 
-export const makeCartItems = createSelector(userInfoState, userInfo);
+export const makeUserInfo = createSelector(userInfoState, userInfo);

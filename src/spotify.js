@@ -1,6 +1,6 @@
 export const baseURL = `https://accounts.spotify.com/authorize`;
 const redirectURL = `http://localhost:3000/`;
-const clientId = `8f9fb4d47ae340f398df45cf040d4282`;
+const clientId = `66eff48115da4f5d9ac33f8ea06cfded`;
 
 const permissions = [
   "user-read-currently-playing",
