@@ -1,10 +1,16 @@
 import "./player.css";
 import Sidebar from "../sidebar/sidebar";
+import Body from "../body/body";
+import Playbar from "../playbar/playbar.jsx";
 
-const Player = () => {
+const Player = ({ spotify }) => {
   return (
-    <div className="player">
-      <Sidebar />
+    <div className="player-container">
+      <div className="player-content">
+        <Sidebar />
+        <Body spotify={spotify} />
+      </div>
+      <Playbar />
     </div>
   );
 };

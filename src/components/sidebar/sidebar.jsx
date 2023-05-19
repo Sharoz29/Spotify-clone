@@ -14,7 +14,6 @@ const playlistsSelector = createSelector(makePlaylists, (playlists) => ({
 const Sidebar = () => {
   const { playlists } = useSelector(playlistsSelector);
 
-  console.log(playlists);
   return (
     <div className="sidebar">
       <img
