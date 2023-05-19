@@ -1,6 +1,11 @@
 import "./player.css";
+import Sidebar from "../sidebar/sidebar";
 
 const Player = () => {
-  return <div className="player">I am the player</div>;
+  return (
+    <div className="player">
+      <Sidebar />
+    </div>
+  );
 };
 export default Player;

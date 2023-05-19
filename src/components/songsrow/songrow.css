@@ -1,0 +1,29 @@
+.song-playing-row {
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+}
+.song-playing-row:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.8;
+}
+.song-playing-info {
+  margin-left: 20px;
+}
+.song-playing-name {
+  font-size: 16px;
+}
+.song-artist-name,
+.song-album-name {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+.song-playing-img {
+  height: 40px;
+  width: 40px;
+}

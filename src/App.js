@@ -4,39 +4,20 @@ import { getTokenFromUrl } from "./spotify";
 import { useEffect, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/player/player";
-import { useDispatch, useSelector } from "react-redux";
-import { createSelector } from "reselect";
-import { makeUserInfo } from "./store/user/userSelector";
+import { useDispatch } from "react-redux";
 import { setUserInfo } from "./store/user/userAction";
-import { makeDiscoverWeekly } from "./store/discoverweekly/discoverSelector";
 import { setDiscoverWeekly } from "./store/discoverweekly/discoverActions";
 import { setPlaylists } from "./store/playlists/playlistAction";
-import { makePlaylists } from "./store/playlists/playlistsSelector";
 
 const spotify = new SpotifyWebApi();
-
-const userInfoSelector = createSelector(makeUserInfo, (userInfo) => ({
-  userInfo,
-}));
 
 const userInfoActionDispatcher = (dispatch) => ({
   setUserInfo: (userInfo) => dispatch(setUserInfo(userInfo)),
 });
 
-const playlistsSelector = createSelector(makePlaylists, (playlists) => ({
-  playlists,
-}));
-
 const playlistActionDispatcher = (dispatch) => ({
   setPlaylists: (playlists) => dispatch(setPlaylists(playlists)),
 });
-
-const weeklyDiscoverSelector = createSelector(
-  makeDiscoverWeekly,
-  (discoverWeekly) => ({
-    discoverWeekly,
-  })
-);
 
 const weeklyDiscoverActionDispatch = (dispatch) => ({
   setDiscoverWeekly: (discoverWeekly) =>
@@ -46,13 +27,10 @@ const weeklyDiscoverActionDispatch = (dispatch) => ({
 function App() {
   const [token, setToken] = useState(null);
 
-  const { userInfo } = useSelector(userInfoSelector);
   const { setUserInfo } = userInfoActionDispatcher(useDispatch());
 
-  const { playlists } = useSelector(playlistsSelector);
   const { setPlaylists } = playlistActionDispatcher(useDispatch());
 
-  const { discoverWeekly } = useSelector(weeklyDiscoverSelector);
   const { setDiscoverWeekly } = weeklyDiscoverActionDispatch(useDispatch());
 
   useEffect(() => {
@@ -61,8 +39,6 @@ function App() {
     window.location.hash = "";
 
     const recievedToken = hash.access_token;
-
-    // console.log(hash);
 
     if (recievedToken) {
       setToken(recievedToken);
@@ -80,9 +56,7 @@ function App() {
         setDiscoverWeekly(playlist);
       });
     }
-  }, [token]);
-
-  console.log(userInfo, playlists, discoverWeekly);
+  }, [token, setDiscoverWeekly, setPlaylists, setUserInfo]);
 
   return (
     <div className="App">

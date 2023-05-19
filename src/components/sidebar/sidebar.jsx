@@ -4,7 +4,7 @@ import { Home } from "@material-ui/icons";
 import { Search } from "@mui/icons-material";
 import { LibraryMusic } from "@material-ui/icons";
 import { createSelector } from "reselect";
-import { makePlaylists } from "./store/playlists/playlistsSelector";
+import { makePlaylists } from "../../store/playlists/playlistsSelector";
 import { useSelector } from "react-redux";
 
 const playlistsSelector = createSelector(makePlaylists, (playlists) => ({
