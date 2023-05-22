@@ -1,6 +1,5 @@
 import "./playbar.css";
 import {
-  PlayCircleOutline,
   SkipPrevious,
   SkipNext,
   PlaylistPlay,
@@ -9,6 +8,7 @@ import {
   VolumeDown,
 } from "@mui/icons-material";
 import { Grid, Slider } from "@mui/material";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 
 const Playbar = () => {
   return (
@@ -29,7 +29,7 @@ const Playbar = () => {
       <div className="playbar-center-container">
         <Shuffle className="playbar-green" />
         <SkipPrevious className="playbar-icon" />
-        <PlayCircleOutline fontSize="large" className="playbar-icon" />
+        <PlayCircleFilledIcon fontSize="large" className="playbar-icon" />
         <SkipNext className="playbar-icon" />
         <Repeat className="playbar-green" />
       </div>

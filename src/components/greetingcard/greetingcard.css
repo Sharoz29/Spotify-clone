@@ -14,6 +14,7 @@
   height: 5rem;
   width: 5rem;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
 }
 .greeting-card-title {
   width: 65%;

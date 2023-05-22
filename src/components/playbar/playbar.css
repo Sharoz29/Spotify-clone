@@ -50,7 +50,12 @@
 .playbar-icon:hover {
   transition: transform 0.2 ease-in;
   transform: scale(1.2) !important;
+  opacity: 1;
 }
+.playbar-icon {
+  opacity: 0.7;
+}
+
 .playbar-right-container * .MuiSlider-root {
   color: #1ed15e;
 }

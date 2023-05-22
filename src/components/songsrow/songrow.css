@@ -27,3 +27,28 @@
   height: 40px;
   width: 40px;
 }
+.song-playing-icon {
+  right: 30%;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+.song-liked-icon {
+  right: 35%;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+.song-row-icon {
+  justify-self: flex-end;
+  position: absolute;
+  color: #1db954;
+}
+.song-row-icon:hover {
+  transform: scale(1.1);
+}
+
+.songrow-icons-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
