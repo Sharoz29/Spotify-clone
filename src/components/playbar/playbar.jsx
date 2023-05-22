@@ -8,7 +8,7 @@ import {
   Repeat,
   VolumeDown,
 } from "@mui/icons-material";
-import { Grid, Slider } from "@material-ui/core";
+import { Grid, Slider } from "@mui/material";
 
 const Playbar = () => {
   <div className="playbar">

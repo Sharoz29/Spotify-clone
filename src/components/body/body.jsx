@@ -1,6 +1,7 @@
 import "./body.css";
 import Header from "../header/header";
-import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
+// import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
+import { PlayCircleFilled, Favorite, MoreHoriz } from "@mui/icons-material";
 import SongPlayingRow from "../songsrow/songrow";
 import { createSelector } from "reselect";
 import { useSelector } from "react-redux";

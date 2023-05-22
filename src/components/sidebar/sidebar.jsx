@@ -1,8 +1,7 @@
 import "./sidebar.css";
 import SidebarOption from "../sidebaroption/sidebarOption";
-import { Home } from "@material-ui/icons";
 import { Search } from "@mui/icons-material";
-import { LibraryMusic } from "@material-ui/icons";
+import { Home, LibraryMusic } from "@mui/icons-material";
 import { createSelector } from "reselect";
 import { makePlaylists } from "../../store/playlists/playlistsSelector";
 import { useSelector } from "react-redux";
