@@ -1,7 +1,7 @@
 import "./player.css";
 import Sidebar from "../sidebar/sidebar";
 import Body from "../body/body";
-import Playbar from "../playbar/playbar.jsx";
+import Playbar from "../playbar/playbar";
 
 const Player = ({ spotify }) => {
   return (

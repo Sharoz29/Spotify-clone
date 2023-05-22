@@ -3,9 +3,9 @@
   display: flex;
   justify-content: space-evenly;
   bottom: 0;
-  height: 65px;
+  height: 45px;
   width: 100%;
-  background-color: #282828;
+  background-color: #1d1a1a;
   padding: 20px;
 }
 .playbar-left-container {

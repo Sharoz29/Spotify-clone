@@ -1,0 +1,3 @@
+export const SEARCH_TYPE = {
+  SET_SEARCH_TYPES: "SET_SEARCH_TYPES",
+};

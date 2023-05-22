@@ -12,6 +12,7 @@ import { makeDiscoverWeekly } from "./store/discoverweekly/discoverSelector";
 import { setDiscoverWeekly } from "./store/discoverweekly/discoverActions";
 import { setPlaylists } from "./store/playlists/playlistAction";
 import { makePlaylists } from "./store/playlists/playlistsSelector";
+import { Route, Routes } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
 
@@ -83,6 +84,11 @@ function App() {
   console.log(userInfo, playlists, discoverWeekly);
 
   return (
+    // <Routes>
+    //   <Route path="/" element={<Login />} />
+    //   <Route path={"/#"} element={<Player spotify={spotify} />} />
+    // </Routes>
+
     <div className="App">
       {token ? <Player spotify={spotify} /> : <Login />}
     </div>

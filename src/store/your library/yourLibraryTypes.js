@@ -1,0 +1,3 @@
+export const YOUR_LIBRARY_TYPE = {
+  SET_YOUR_LIBRARY: "SET_YOUR_LIBRARY",
+};

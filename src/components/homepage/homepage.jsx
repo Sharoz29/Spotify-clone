@@ -1,6 +1,5 @@
 import "./homepage.css";
 import Sidebar from "../sidebar/sidebar";
-// import { Fragment } from "react";
 
 const HomePage = () => {
   return (
