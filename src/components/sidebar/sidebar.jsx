@@ -50,7 +50,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <img
-        src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/06/635963274692858859903160895_spotify-logo-horizontal-black.jpg"
+        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
         alt="spotify-logo"
         className="sidebar-logo"
       />

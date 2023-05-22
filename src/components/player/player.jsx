@@ -8,6 +8,7 @@ import { makeYourLibrary } from "../../store/your library/yourLibrarySelector";
 import { createSelector } from "reselect";
 import { useSelector } from "react-redux";
 import HomePage from "../homepage/homepage";
+import YourLibrary from "../yourlibrary/yourlibrary";
 
 const homeSelector = createSelector(makeHome, (home) => ({
   home,
@@ -34,6 +35,7 @@ const Player = ({ spotify }) => {
         <Sidebar />
         {home && <HomePage />}
         {search && <Body spotify={spotify} />}
+        {yourLibrary && <YourLibrary />}
       </div>
       <Playbar />
     </div>

@@ -1,0 +1,24 @@
+.your-library-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  left: 250px;
+  width: 100%;
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+.your-library-title {
+  margin: 2.5rem;
+  font-weight: 700;
+}
+.your-library-options {
+  height: 3rem;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.option {
+  padding: 0 1rem;
+}

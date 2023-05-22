@@ -39,3 +39,6 @@ code {
 .search-icon {
   margin-right: 0.75rem;
 }
+.searcher:active {
+  border: none;
+}

@@ -80,7 +80,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">Made For You</h1>
         <div className="daily-mixes">
           {playlist1?.items?.map((item, i) => (
-            <AlbumCard album={item} key={i} id={i} />
+            <AlbumCard album={item} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">Top mixes for you</h1>
         <div className="daily-mixes">
           {playlist2?.items?.map((item, i) => (
-            <AlbumCard album={item} key={i} id={i} />
+            <AlbumCard album={item} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
@@ -96,7 +96,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">Hip-Hop Hottest</h1>
         <div className="daily-mixes">
           {playlist3?.items?.map((item, i) => (
-            <AlbumCard album={item} key={i} id={i} />
+            <AlbumCard album={item} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
@@ -104,7 +104,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">Breaking a Sweat</h1>
         <div className="daily-mixes">
           {playlist4?.items?.map((item, i) => (
-            <AlbumCard album={item} key={i} id={i} />
+            <AlbumCard album={item} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
@@ -112,7 +112,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">Your Top Artists</h1>
         <div className="daily-mixes">
           {artists?.items?.map((artist, i) => (
-            <ArtistCard artist={artist} key={i} id={i} />
+            <ArtistCard artist={artist} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
@@ -120,7 +120,7 @@ const HomePage = () => {
         <h1 className="daily-mix-title">More From Drake</h1>
         <div className="daily-mixes">
           {playlist5?.items?.map((item, i) => (
-            <AlbumCard album={item} key={i} id={i} />
+            <AlbumCard album={item} key={i} id={i} showAll={false} />
           ))}
         </div>
       </div>
