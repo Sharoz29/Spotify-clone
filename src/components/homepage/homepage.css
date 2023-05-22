@@ -1,0 +1,45 @@
+.home-page-container {
+  background: linear-gradient(270deg, #0a0942, #191414);
+  width: 100%;
+  color: white;
+  position: fixed;
+  left: 250px;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 5rem;
+}
+.arrow-container {
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10%;
+}
+.arrow {
+  background-color: #4242463b;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.arrow:hover {
+  transform: scale(1.1);
+}
+.greetings-title,
+.daily-mix-title {
+  margin-left: 2.5rem;
+}
+.greetings-content {
+  margin: 4rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.75rem;
+  margin-left: 5rem;
+}
+.daily-mixes {
+  margin-left: 2.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  gap: 1rem;
+}

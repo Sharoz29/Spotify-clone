@@ -1,7 +1,12 @@
 import { createSelector } from "reselect";
 
-const searchState = (state) => state.searchReducer;
+const searchState = (state) => {
+  console.log(state.searchReducer);
+  return state.searchReducer;
+};
 
-const search = (searchReducer) => searchReducer.search;
+const searched = (searchReducer) => {
+  return searchReducer.search;
+};
 
-export const makeSearch = createSelector(searchState, search);
+export const makeSearch = createSelector(searchState, searched);

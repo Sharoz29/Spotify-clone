@@ -1,7 +1,7 @@
 import "./App.css";
 import Login from "./components/login/login";
 import { getTokenFromUrl } from "./spotify";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/player/player";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,9 +12,18 @@ import { makeDiscoverWeekly } from "./store/discoverweekly/discoverSelector";
 import { setDiscoverWeekly } from "./store/discoverweekly/discoverActions";
 import { setPlaylists } from "./store/playlists/playlistAction";
 import { makePlaylists } from "./store/playlists/playlistsSelector";
-import { Route, Routes } from "react-router-dom";
+import { makeToken } from "./store/token/tokenSelector";
+import { setToken } from "./store/token/tokenAction";
 
-const spotify = new SpotifyWebApi();
+export const spotify = new SpotifyWebApi();
+
+const tokenSelector = createSelector(makeToken, (token) => ({
+  token,
+}));
+
+const tokenActionDispatcher = (dispatch) => ({
+  setToken: (token) => dispatch(setToken(token)),
+});
 
 const userInfoSelector = createSelector(makeUserInfo, (userInfo) => ({
   userInfo,
@@ -45,7 +54,8 @@ const weeklyDiscoverActionDispatch = (dispatch) => ({
 });
 
 function App() {
-  const [token, setToken] = useState(null);
+  const { token } = useSelector(tokenSelector);
+  const { setToken } = tokenActionDispatcher(useDispatch());
 
   const { userInfo } = useSelector(userInfoSelector);
   const { setUserInfo } = userInfoActionDispatcher(useDispatch());
@@ -84,11 +94,6 @@ function App() {
   console.log(userInfo, playlists, discoverWeekly);
 
   return (
-    // <Routes>
-    //   <Route path="/" element={<Login />} />
-    //   <Route path={"/#"} element={<Player spotify={spotify} />} />
-    // </Routes>
-
     <div className="App">
       {token ? <Player spotify={spotify} /> : <Login />}
     </div>

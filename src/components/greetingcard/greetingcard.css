@@ -1,0 +1,26 @@
+.greeting-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30rem;
+  background-color: rgba(0, 0, 0, 0.301);
+  border-radius: 0.5rem;
+}
+.greeting-card-container:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.greeting-card-image {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+}
+.greeting-card-title {
+  width: 65%;
+  margin-left: 0.75rem;
+}
+.play-btn {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  margin-right: 0.75rem;
+}

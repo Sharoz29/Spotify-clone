@@ -1,7 +1,7 @@
 import { HOME_TYPE } from "./homeTypes";
 
 const INITIAL_STATE = {
-  home: false,
+  home: true,
 };
 
 const homeReducer = (state = INITIAL_STATE, action) => {

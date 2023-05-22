@@ -1,0 +1,32 @@
+.album-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(29, 29, 29);
+  width: 15rem;
+  align-items: center;
+  height: 20rem;
+  border-radius: 0.5rem;
+  justify-content: space-around;
+}
+.album-container:hover {
+  background-color: rgb(85, 85, 85);
+  cursor: pointer;
+}
+.album-img {
+  margin-top: 1rem;
+  width: 10rem;
+  height: 12rem;
+  border-radius: 0.5rem;
+}
+.album-details {
+  width: 75%;
+}
+
+.album-title {
+  width: 10rem;
+}
+.album-description {
+  font-size: 0.75rem;
+  text-align: center;
+  width: 80%;
+}
