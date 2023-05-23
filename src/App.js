@@ -6,12 +6,9 @@ import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/player/player";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { makeUserInfo } from "./store/user/userSelector";
 import { setUserInfo } from "./store/user/userAction";
-import { makeDiscoverWeekly } from "./store/discoverweekly/discoverSelector";
 import { setDiscoverWeekly } from "./store/discoverweekly/discoverActions";
 import { setPlaylists } from "./store/playlists/playlistAction";
-import { makePlaylists } from "./store/playlists/playlistsSelector";
 import { makeToken } from "./store/token/tokenSelector";
 import { setToken } from "./store/token/tokenAction";
 
@@ -25,28 +22,13 @@ const tokenActionDispatcher = (dispatch) => ({
   setToken: (token) => dispatch(setToken(token)),
 });
 
-const userInfoSelector = createSelector(makeUserInfo, (userInfo) => ({
-  userInfo,
-}));
-
 const userInfoActionDispatcher = (dispatch) => ({
   setUserInfo: (userInfo) => dispatch(setUserInfo(userInfo)),
 });
 
-const playlistsSelector = createSelector(makePlaylists, (playlists) => ({
-  playlists,
-}));
-
 const playlistActionDispatcher = (dispatch) => ({
   setPlaylists: (playlists) => dispatch(setPlaylists(playlists)),
 });
-
-const weeklyDiscoverSelector = createSelector(
-  makeDiscoverWeekly,
-  (discoverWeekly) => ({
-    discoverWeekly,
-  })
-);
 
 const weeklyDiscoverActionDispatch = (dispatch) => ({
   setDiscoverWeekly: (discoverWeekly) =>
@@ -57,13 +39,10 @@ function App() {
   const { token } = useSelector(tokenSelector);
   const { setToken } = tokenActionDispatcher(useDispatch());
 
-  const { userInfo } = useSelector(userInfoSelector);
   const { setUserInfo } = userInfoActionDispatcher(useDispatch());
 
-  const { playlists } = useSelector(playlistsSelector);
   const { setPlaylists } = playlistActionDispatcher(useDispatch());
 
-  const { discoverWeekly } = useSelector(weeklyDiscoverSelector);
   const { setDiscoverWeekly } = weeklyDiscoverActionDispatch(useDispatch());
 
   useEffect(() => {
@@ -91,11 +70,7 @@ function App() {
     }
   }, [token]);
 
-  return (
-    <div className="App">
-      {token ? <Player spotify={spotify} /> : <Login />}
-    </div>
-  );
+  return <div className="App">{token ? <Player /> : <Login />}</div>;
 }
 
 export default App;

@@ -2,27 +2,14 @@ import "./body.css";
 import Header from "../header/header";
 import { PlayCircleFilled, Favorite, MoreHoriz } from "@mui/icons-material";
 import SongPlayingRow from "../songsrow/songrow";
-import { createSelector } from "reselect";
-import { useSelector } from "react-redux";
-import { makeDiscoverWeekly } from "../../store/discoverweekly/discoverSelector";
 import { Fragment } from "react";
 
-const weeklyDiscoverSelector = createSelector(
-  makeDiscoverWeekly,
-  (discoverWeekly) => ({
-    discoverWeekly,
-  })
-);
-
-const Body = ({ spotify }) => {
-  const { discoverWeekly } = useSelector(weeklyDiscoverSelector);
-
-  console.log(discoverWeekly);
+const Body = ({ discoverWeekly }) => {
   return (
     <Fragment>
       {discoverWeekly.length !== 0 && (
         <div className="body">
-          <Header spotify={spotify} />
+          <Header />
           <div className="body-info-container">
             <img
               src={discoverWeekly?.images[0]?.url}
@@ -43,8 +30,8 @@ const Body = ({ spotify }) => {
               <Favorite fontSize="large" />
               <MoreHoriz />
             </div>
-            {discoverWeekly?.tracks?.items?.map((item) => (
-              <SongPlayingRow song={item?.track} />
+            {discoverWeekly?.tracks?.items?.map((item, i) => (
+              <SongPlayingRow song={item?.track} key={i} />
             ))}
           </div>
         </div>
