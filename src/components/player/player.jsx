@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import HomePage from "../homepage/homepage";
 import YourLibrary from "../yourlibrary/yourlibrary";
 import { makeDiscoverWeekly } from "../../store/discoverweekly/discoverSelector";
+import Searchpage from "../searchpage/searchpage";
 
 const homeSelector = createSelector(makeHome, (home) => ({
   home,
@@ -41,7 +42,7 @@ const Player = () => {
       <div className="player-content">
         <Sidebar />
         {home && <HomePage />}
-        {search && <Body discoverWeekly={discoverWeekly} />}
+        {search && <Searchpage />}
         {yourLibrary && <YourLibrary />}
       </div>
       <Playbar />
