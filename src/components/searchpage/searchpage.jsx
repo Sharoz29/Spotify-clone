@@ -34,7 +34,6 @@ const Searchpage = ({ handleSearching, searched }) => {
         : setSearchedAlbum([]);
     }
   }, [token, searched]);
-  console.log(searchedAlbum);
 
   return (
     <div className="categories-container">

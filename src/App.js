@@ -7,7 +7,7 @@ import Player from "./components/player/player";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { setUserInfo } from "./store/user/userAction";
-import { setDiscoverWeekly } from "./store/discoverweekly/discoverActions";
+
 import { setPlaylists } from "./store/playlists/playlistAction";
 import { makeToken } from "./store/token/tokenSelector";
 import { setToken } from "./store/token/tokenAction";
@@ -30,11 +30,6 @@ const playlistActionDispatcher = (dispatch) => ({
   setPlaylists: (playlists) => dispatch(setPlaylists(playlists)),
 });
 
-const weeklyDiscoverActionDispatch = (dispatch) => ({
-  setDiscoverWeekly: (discoverWeekly) =>
-    dispatch(setDiscoverWeekly(discoverWeekly)),
-});
-
 function App() {
   const { token } = useSelector(tokenSelector);
   const { setToken } = tokenActionDispatcher(useDispatch());
@@ -42,8 +37,6 @@ function App() {
   const { setUserInfo } = userInfoActionDispatcher(useDispatch());
 
   const { setPlaylists } = playlistActionDispatcher(useDispatch());
-
-  const { setDiscoverWeekly } = weeklyDiscoverActionDispatch(useDispatch());
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -63,9 +56,6 @@ function App() {
 
       spotify.getUserPlaylists().then((playlists) => {
         setPlaylists(playlists);
-      });
-      spotify.getPlaylist("37i9dQZF1E34Ucml4HHx1w").then((playlist) => {
-        setDiscoverWeekly(playlist);
       });
     }
   }, [token]);
