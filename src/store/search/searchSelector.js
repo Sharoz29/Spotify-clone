@@ -1,7 +1,6 @@
 import { createSelector } from "reselect";
 
 const searchState = (state) => {
-  console.log(state.searchReducer);
   return state.searchReducer;
 };
 

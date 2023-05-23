@@ -91,8 +91,6 @@ function App() {
     }
   }, [token]);
 
-  console.log(userInfo, playlists, discoverWeekly);
-
   return (
     <div className="App">
       {token ? <Player spotify={spotify} /> : <Login />}

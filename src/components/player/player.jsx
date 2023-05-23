@@ -27,8 +27,6 @@ const Player = ({ spotify }) => {
   const { search } = useSelector(searchSelector);
   const { yourLibrary } = useSelector(yourLibrarySelector);
 
-  console.log(home, search, yourLibrary);
-
   return (
     <div className="player-container">
       <div className="player-content">
