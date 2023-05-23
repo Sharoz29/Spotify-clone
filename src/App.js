@@ -57,6 +57,9 @@ function App() {
       spotify.getUserPlaylists().then((playlists) => {
         setPlaylists(playlists);
       });
+      spotify
+        .getMyCurrentPlayingTrack()
+        .then((track) => console.log("playing:", track));
     }
   }, [token]);
 
