@@ -5,11 +5,12 @@
   overflow-y: scroll;
   left: 250px;
   width: 85%;
-  background-color: rgb(29, 29, 29);
+  background-color: rgba(0, 0, 0, 0.92);
   color: white;
+  margin-bottom: 5rem;
 }
 .category-cards-container {
-  width: 85%;
+  width: 87%;
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
@@ -24,7 +25,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
   height: 4rem;
 }
 .search-form {

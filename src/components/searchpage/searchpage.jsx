@@ -12,15 +12,11 @@ const tokenSelector = createSelector(makeToken, (token) => ({
   token,
 }));
 
-const Searchpage = () => {
+const Searchpage = ({ handleSearching, searched }) => {
   const { token } = useSelector(tokenSelector);
   const [categories, setCategories] = useState([]);
-  const [searched, setSeached] = useState("");
-  const [searchedAlbum, setSearchedAlbum] = useState([]);
 
-  const handleSearching = (e) => {
-    setSeached(e.target.value);
-  };
+  const [searchedAlbum, setSearchedAlbum] = useState([]);
 
   useEffect(() => {
     const spotify = new SpotifyWebApi();
@@ -34,10 +30,11 @@ const Searchpage = () => {
       searched.length !== 0
         ? spotify
             .searchAlbums(searched)
-            .then((album) => setSearchedAlbum(album.albums))
+            .then((album) => setSearchedAlbum(album.albums.items))
         : setSearchedAlbum([]);
     }
-  }, [token, categories, searched, searchedAlbum]);
+  }, [token, searched]);
+  console.log(searchedAlbum);
 
   return (
     <div className="categories-container">
@@ -68,8 +65,8 @@ const Searchpage = () => {
         </Fragment>
       ) : (
         <div className="category-cards-container">
-          {searchedAlbum?.map((album) => (
-            <AlbumCard album={album} />
+          {searchedAlbum?.map((album, i) => (
+            <AlbumCard album={album} key={i} id={i} showAll={true} />
           ))}
         </div>
       )}
